@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  min-height: 97vh;
+  background: #d4d2a5;
+  background-image: linear-gradient(to right, #f1bebe 0%, #f3d87f 100%);
+  padding: 3em 0;
+  font-family: Arial, sans-serif;
+}
+.toast {
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+}
+.content-toast {
+  display: block;
+}
+h3 {
+  display: flex;
+  justify-content: center;
+}
+.toast-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding-top: 80px;
+}
+.custom-toast {
+  padding: 10px 50px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 700;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+}
+/* colors buttons */
+button.submit-toast {
+  background-color: green;
+}
+button.failed-toast {
+  background-color: red;
+}
+button.info-toast {
+  background-color: blue;
+}
+button.warning-toast {
+  background-color: yellow;
+}
+
+/* modal info */
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  max-width: 450px;
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 4px;
+  box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1023;
+  animation: slideInRight 0.3s ease-in-out forwards,
+    fadeOut 0.5s ease-in-out forwards 3s;
+  transform: translateX(110%);
+}
+.box.closing {
+  animation: slideOutRight 0.5s ease-in-out forwards;
+}
+
+.box-progress {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: #b7b7b7;
+  animation: toastProgress 3s ease-in-out forwards;
+}
+.box-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box-icon {
+  display: flex;
+  align-self: center;
+  padding: 0.35rem 0.5rem;
+  font-size: 1.5rem;
+}
+
+.box-message {
+  display: flex;
+  flex: 1;
+  font-size: 24px;
+  color: #000000;
+  padding: 0.5rem;
+  font-weight: 700;
+  padding-left: 10px;
+}
+
+.box-content-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 20px 0;
+}
+/* //bg-modal colors  */
+.box-submit {
+  background-color: greenyellow;
+}
+.box.box-submit .box-progress {
+  background-color: #2ecc71;
+}
+.box-failed {
+  background-color: red;
+}
+.box.box-danger .box-progress {
+  background-color: #e74c3c;
+}
+.box-info {
+  background-color: blue;
+}
+.box.box-info .box-progress {
+  background-color: #3498db;
+}
+.box-warning {
+  background-color: yellow;
+}
+.box.box-warning .box-progress {
+  background-color: #f1c40f;
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(110%);
+  }
+
+  75% {
+    transform: translateX(-10%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0%);
+  }
+
+  25% {
+    transform: translateX(-10%);
+  }
+
+  100% {
+    transform: translateX(110%);
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes toastProgress {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}

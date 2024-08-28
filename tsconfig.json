@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "lib": ["es2017", "dom"],
+    "outDir": "./js", // Вихідна директорія для скомпільованих файлів
+    "rootDir": "./ts", // Вхідна директорія для файлів TypeScript
+    "module": "commonjs",
+    "strict": true
+  },
+  "include": ["ts/**/*.ts"] // Включити всі файли TypeScript з папки ts
+}
